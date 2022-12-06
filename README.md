@@ -70,4 +70,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 Notes
-Images found on Nerarchy.com
+Images found on Nerdarchy.com
+Routing done with React Router 6
+Logo downloaded from https://www.vecteezy.com/vector-art/4991740-shield-with-dragon-head-inside

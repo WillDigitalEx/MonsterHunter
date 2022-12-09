@@ -1,14 +1,23 @@
+$default-red: #C50009;
+$dark-red:#7D160F;
+$main-color: #333333;
+$sub-color: #FFFFFF;
+
 .navigation {
     height: 70px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    background-color: $main-color;
   
-    .logo {
-      height: 100%;
-      width: 70px;
-      padding: 0.3rem 0.75rem;
+    a.logo {
+      height: 60px;
+      width: 60px;
+      border-radius: 35px;
+      background-color: $sub-color;
+      padding: 0.4rem 0.4rem 0.4rem 0.65rem;
+      margin: 0.3rem 0.7rem;
     }
   
     .nav-links-container {
@@ -20,7 +29,12 @@
   
       .nav-link {
         padding: 10px 15px;
+        color: $sub-color;
         cursor: pointer;
+
+        &:hover {
+          color: $default-red;
+        }
       }
     }
   }

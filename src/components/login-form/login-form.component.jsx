@@ -2,7 +2,6 @@ import { useState } from "react";
 
 import { 
     signInWithGooglePopup,
-    createUserFromAuth,
     signInAuthWithEmailAndPassword,
 } from '../../utils/firebase/firebase.utils';
 
@@ -24,11 +23,22 @@ const LoginForm = () => {
         setLoginFields(defaultLoginFields);
     }
 
+    const SignInWithGoogle = async () => {
+        await signInWithGooglePopup();      
+    }
+
+    const handleChange = (event) => {
+        const {name, value} = event.target;
+
+        setLoginFields({ ...loginFields, [name]: value });
+    }
+
     const handleLogin = async (event) => {
         event.preventDefault();
 
         try {
-            const response = await signInAuthWithEmailAndPassword(email,password);
+            await signInAuthWithEmailAndPassword(email,password);
+
             resetLoginForm();
         } catch (error) {
             if(error.code === "auth/wrong-password" || error.code === "auth/user-not-found") {
@@ -39,16 +49,7 @@ const LoginForm = () => {
         }
     }
 
-    const handleChange = (event) => {
-        const {name, value} = event.target;
-
-        setLoginFields({ ...loginFields, [name]: value });
-    }
-
-    const SignInWithGoogle = async () => {
-        const { user } = await signInWithGooglePopup();
-        await createUserFromAuth(user);
-    }
+    
 
     return (
         <div className='login-container'>

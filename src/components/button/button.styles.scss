@@ -1,7 +1,4 @@
-$default-red: #C50009;
-$dark-red:#7D160F;
-$main-color: #333333;
-$sub-color: #FFFFFF;
+@import "../../variables";
 
 .button-container {
     min-width: 2rem;
@@ -9,7 +6,6 @@ $sub-color: #FFFFFF;
     letter-spacing: 0.5px;
     line-height: 1;
     padding: 0.75rem 1.6rem;
-    margin: auto;
     font-size: 1em;
     background-color: $default-red;
     color: $sub-color;

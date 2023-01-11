@@ -1,8 +1,10 @@
+@import "../../variables";
+
 .login-container {
     display: flex;
     flex-direction: column;
     width: 45%;
-    background: url(http://localhost:3000/images/stat-block-top-texture.png), url(http://localhost:3000/images/paper-texture.png);
+    background: url(#{$default-domain}/images/stat-block-top-texture.png), url(#{$default-domain}/images/paper-texture.png);
     background-position: top;
     background-repeat: no-repeat, repeat;
     background-size: 100% auto;

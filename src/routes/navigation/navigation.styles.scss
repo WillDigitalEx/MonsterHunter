@@ -1,7 +1,4 @@
-$default-red: #C50009;
-$dark-red:#7D160F;
-$main-color: #333333;
-$sub-color: #FFFFFF;
+@import "../../variables";
 
 .navigation {
     height: 70px;
@@ -9,6 +6,7 @@ $sub-color: #FFFFFF;
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    padding: 0 2.5rem;
     background-color: $main-color;
   
     a.logo {

@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .category-container {
     min-width: 30%;
     height: 240px;
@@ -52,7 +54,7 @@
       background-color: white;
       opacity: 0.8;
       position: absolute;
-      background: url(http://localhost:3000/images/stat-block-top-texture.png),url(http://localhost:3000/images/paper-texture.png);
+      background: url(#{$default-domain}/images/stat-block-top-texture.png),url(#{$default-domain}/images/paper-texture.png);
       background-position: top;
       background-repeat: no-repeat,repeat;
       background-size: 100% auto;

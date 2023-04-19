@@ -17,6 +17,7 @@ export const CartDropdownContainer = styled.div`
 export const EmptyMessage = styled.span`
   font-size: 1.125em;
   margin: 3.125rem auto;
+  text-align: center;
 `
 export const CartMonsters = styled.div`
   height: 240px;

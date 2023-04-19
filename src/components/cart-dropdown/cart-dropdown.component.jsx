@@ -6,7 +6,7 @@ import { CartContext } from '../../contexts/cart.context';
 import Button from '../button/button.component';
 import CartMonster from '../cart-monster/cart-monster.component';
 
-import { CartDropdownContainer, CartMonsters } from './cart-dropdown.styles';
+import { CartDropdownContainer, CartMonsters, EmptyMessage } from './cart-dropdown.styles';
 
 const CartDropdown = () => {
     const { cartMonsters } = useContext(CartContext);
@@ -19,9 +19,13 @@ const CartDropdown = () => {
     return (
         <CartDropdownContainer>
             <CartMonsters>
-                {cartMonsters.map(monster => 
-                    (<CartMonster key={monster.index} cartMonster={monster} />
-                ))}
+                {
+                    cartMonsters.length ? (cartMonsters.map(monster => 
+                        (<CartMonster key={monster.index} cartMonster={monster} />
+                    ))) : (
+                        <EmptyMessage>You have not added any monsters</EmptyMessage>
+                    )
+                }
             </CartMonsters>
             <Button
                         buttonText="Check Out"

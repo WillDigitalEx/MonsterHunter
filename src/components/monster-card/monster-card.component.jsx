@@ -2,9 +2,9 @@ import { useContext } from 'react';
 
 import { CartContext } from '../../contexts/cart.context';
 
-import Button from '../button/button.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
-import './monster-card.styles.scss';
+import { CardImageContainer, CardImage, MonsterCardContainer, CardFooter, MonsterName, MonsterPrice } from './monster-card.styles';
 
 const MonsterCard = ({ monster }) => {
     const { name, xp, index, type } = monster;
@@ -16,24 +16,24 @@ const MonsterCard = ({ monster }) => {
     }
 
     return (
-        <div className="monster-card-container" key={index}>
-            <div className="monster-card-image">
-                <img src={`/images/${index.replace("adult-", "").replace("ancient-", "").replace("young-", "").replace("-wyrmling", "")}.jpg`} onError={getDefaultImageUrl} alt={`${name}`} />
-            </div>
-            <div className="monster-card-footer">
-                <span className="monster-name">{name}</span>
-                <span className="monster-price">{xp} Gold</span>
-            </div>
+        <MonsterCardContainer key={index}>
+            <CardImageContainer>
+                <CardImage src={`/images/${index.replace("adult-", "").replace("ancient-", "").replace("young-", "").replace("-wyrmling", "")}.jpg`} onError={getDefaultImageUrl} alt={`${name}`} />
+            </CardImageContainer>
+            <CardFooter>
+                <MonsterName>{name}</MonsterName>
+                <MonsterPrice>{xp} Gold</MonsterPrice>
+            </CardFooter>
             <Button
                 buttonText="Add to Cart"
-                buttonType = "default"
+                buttonType = {BUTTON_TYPE_CLASSES.card}
                 buttonOptions= {{
                     type: 'button',
                     onClick: addMonsterTooCart,
                 }}
             >
             </Button>
-        </div>
+        </MonsterCardContainer>
     );
 }
 

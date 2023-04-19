@@ -2,15 +2,15 @@ import MonsterCard from '../monster-card/monster-card.component';
 
 import { Link } from 'react-router-dom';
 
-import './category-preview.styles.scss';
+import { CategoryPreviewContainer, CatPreviewTitle, PreviewGrid } from './category-preview.styles';
 
 const CategoryPreview = ({ title, monsters }) => {
     return (
-        <div className='category-preview-container'>
-            <h2>
-                <Link className="title" to={title.replace(/\s+/g, '-')}>{title.toUpperCase()}</Link>
-            </h2>
-            <div className='preview'>
+        <CategoryPreviewContainer>
+            <CatPreviewTitle>
+                <Link to={title.replace(/\s+/g, '-')}>{title.toUpperCase()}</Link>
+            </CatPreviewTitle>
+            <PreviewGrid>
                 {
                     monsters
                         .filter((_, idx) => idx < 4)
@@ -18,8 +18,8 @@ const CategoryPreview = ({ title, monsters }) => {
                             <MonsterCard key={monster.index} monster={monster} />
                         )
                 }
-            </div>
-        </div>
+            </PreviewGrid>
+        </CategoryPreviewContainer>
     )
 }
 

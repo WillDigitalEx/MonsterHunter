@@ -2,7 +2,16 @@ import { useContext } from 'react';
 
 import { CartContext } from '../../contexts/cart.context';
 
-import './checkout-monster.styles.scss';
+import { 
+    CheckoutMonsterContainer, 
+    MonsterImageContainer, 
+    MonsterImage, 
+    MonsterData, 
+    MonsterQuantity, 
+    QuantityArrow, 
+    QuantityValue, 
+    RemoveMonsterButton
+} from './checkout-monster.styles';
 
 const CheckoutMonster = ({ cartMonster }) => {
     const { name, index, xp, type, quantity } = cartMonster;
@@ -18,25 +27,25 @@ const CheckoutMonster = ({ cartMonster }) => {
     }
 
     return (
-        <div className='checkout-monster-container'>
-            <div className='image-container'>
-                <img src={`/images/${index.replace("adult-", "").replace("ancient-", "").replace("young-", "").replace("-wyrmling", "")}.jpg`} onError={getDefaultImageUrl} alt={`${name}`} />
-            </div>
-            <span className='name'>{name}</span>
-            <span className='quantity'>
-                <div className='arrow' title='Reduce the number of requested monsters' onClick={removeMonsterHandler}>
+        <CheckoutMonsterContainer>
+            <MonsterImageContainer>
+                <MonsterImage src={`/images/${index.replace("adult-", "").replace("ancient-", "").replace("young-", "").replace("-wyrmling", "")}.jpg`} onError={getDefaultImageUrl} alt={`${name}`} />
+            </MonsterImageContainer>
+            <MonsterData>{name}</MonsterData>
+            <MonsterQuantity>
+                <QuantityArrow title='Reduce the number of requested monsters' onClick={removeMonsterHandler}>
                     &#10094;
-                </div>
-                <span className='value'>{quantity}</span>
+                </QuantityArrow>
+                <QuantityValue>{quantity}</QuantityValue>
                 <div className='arrow' title='Increase the number of requested monsters' onClick={addMonsterHandler}>
                     &#10095;
                 </div>
-            </span>
-            <span className='price'>{xp}G</span>
-            <div className='remove-button' onClick={clearMonsterHandler}>
+            </MonsterQuantity>
+            <MonsterData>{xp}G</MonsterData>
+            <RemoveMonsterButton onClick={clearMonsterHandler}>
                 &#10005;
-            </div>
-        </div>
+            </RemoveMonsterButton>
+        </CheckoutMonsterContainer>
     )
 
 }

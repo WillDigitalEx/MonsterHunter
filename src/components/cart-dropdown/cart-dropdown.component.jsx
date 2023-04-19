@@ -6,7 +6,7 @@ import { CartContext } from '../../contexts/cart.context';
 import Button from '../button/button.component';
 import CartMonster from '../cart-monster/cart-monster.component';
 
-import './cart-dropdown.styles.scss';
+import { CartDropdownContainer, CartMonsters } from './cart-dropdown.styles';
 
 const CartDropdown = () => {
     const { cartMonsters } = useContext(CartContext);
@@ -17,12 +17,12 @@ const CartDropdown = () => {
     }
 
     return (
-        <div className='cart-dropdown-container'>
-            <div className='cart-monsters'>
+        <CartDropdownContainer>
+            <CartMonsters>
                 {cartMonsters.map(monster => 
                     (<CartMonster key={monster.index} cartMonster={monster} />
                 ))}
-            </div>
+            </CartMonsters>
             <Button
                         buttonText="Check Out"
                         buttonType = "inverted" //options: default, inverted, google
@@ -32,7 +32,7 @@ const CartDropdown = () => {
                         }}
                     >
             </Button>
-        </div>
+        </CartDropdownContainer>
     )
 }
 

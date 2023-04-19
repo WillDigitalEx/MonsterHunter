@@ -4,38 +4,38 @@ import { CartContext } from '../../contexts/cart.context';
 import CheckoutMonster from '../../components/checkout-monster/checkout-monster.component';
 
 
-import './checkout.styles.scss';
+import { CheckoutContainer, CheckoutHeader, HeaderBlock, CheckoutTotal } from "./checkout.styles";
 
 
 const Checkout = () => {
     const { cartMonsters, cartTotal } = useContext(CartContext);
 
     return (
-        <div className='checkout-container'>
-            <div className='checkout-header'>
-                <div className='header-block'>
+        <CheckoutContainer>
+            <CheckoutHeader>
+                <HeaderBlock>
                     <span>Monster</span>
-                </div>
-                <div className='header-block'>
+                </HeaderBlock>
+                <HeaderBlock>
                     <span>Name</span>
-                </div>
-                <div className='header-block'>
+                </HeaderBlock>
+                <HeaderBlock>
                     <span>Quantity</span>
-                </div>
-                <div className='header-block'>
+                </HeaderBlock>
+                <HeaderBlock>
                     <span>Price</span>
-                </div>
-                <div className='header-block'>
+                </HeaderBlock>
+                <HeaderBlock>
                     <span>Remove</span>
-                </div>
-            </div>
+                </HeaderBlock>
+            </CheckoutHeader>
             {cartMonsters.map((cartMonster) => (
-                <CheckoutMonster key={cartMonster.id} cartMonster={cartMonster}/>
+                <CheckoutMonster key={cartMonster.index} cartMonster={cartMonster}/>
             ))}
-            <span className='total'>
+            <CheckoutTotal>
                 Total: {cartTotal} Gold
-            </span>    
-        </div>
+            </CheckoutTotal>    
+        </CheckoutContainer>
     )
 }
 

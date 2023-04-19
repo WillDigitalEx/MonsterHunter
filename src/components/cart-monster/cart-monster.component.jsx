@@ -1,4 +1,4 @@
-import './cart-monster.styles.scss';
+import { CartMonsterContainer, MonsterImage, MonsterDetails, MonsterName, MonsterPrice } from './cart-monster.styles';
 
 const CartMonster = ({ cartMonster }) => {
     const { name, index, xp, type, quantity } = cartMonster;
@@ -7,13 +7,13 @@ const CartMonster = ({ cartMonster }) => {
     }
 
     return (
-        <div className='cart-monster-container' key={index}>
-            <img src={`/images/${index.replace("adult-", "").replace("ancient-", "").replace("young-", "").replace("-wyrmling", "")}.jpg`} onError={getDefaultImageUrl} alt={`${name}`} />
-            <div className='monster-details'>
-                <span className='name'>{name}</span>
-                <span className='price'>{quantity} x {xp}G</span>
-            </div>
-        </div>
+        <CartMonsterContainer key={index}>
+            <MonsterImage src={`/images/${index.replace("adult-", "").replace("ancient-", "").replace("young-", "").replace("-wyrmling", "")}.jpg`} onError={getDefaultImageUrl} alt={`${name}`} />
+            <MonsterDetails>
+                <MonsterName>{name}</MonsterName>
+                <MonsterPrice>{quantity} x {xp}G</MonsterPrice>
+            </MonsterDetails>
+        </CartMonsterContainer>
     )
 }
 

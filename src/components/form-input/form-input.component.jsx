@@ -1,15 +1,15 @@
-import './form-input.styles.scss';
+import { FormField, InputField, InputFieldLabel } from './form-input.styles';
 const FormInput = ({ label, inputOptions }) => (
-    <div className="formField">
-        <input className="form-input" {...inputOptions} />
+    <FormField>
+        <InputField  {...inputOptions} />
         {label && (
-            <label 
+            <InputFieldLabel 
                 htmlFor={inputOptions.id} 
                 className={`${inputOptions.value.length ? 'shrink ' : ''}form-input-label`}>
                 {label}
-            </label>
+            </InputFieldLabel>
         )}
-    </div>
+    </FormField>
 );
 
 export default FormInput;

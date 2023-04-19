@@ -6,9 +6,9 @@ import {
 } from '../../utils/firebase/firebase.utils';
 
 import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
-import './login-form.styles.scss';
+import { LoginContainer, LoginTitle, ButtonsContainer } from "./login-form.styles";
 
 const defaultLoginFields = {
     email: '',
@@ -48,12 +48,9 @@ const LoginForm = () => {
             }
         }
     }
-
-    
-
     return (
-        <div className='login-container'>
-            <h2>Already hast an account?</h2>
+        <LoginContainer>
+            <LoginTitle>Already hast an account?</LoginTitle>
             <span>Sign in with thy email and password or Google</span>
             <form onSubmit={handleLogin}>
                 <FormInput 
@@ -79,10 +76,10 @@ const LoginForm = () => {
                         required: true,
                     }}
                 />
-                <div className='buttons-container'>
+                <ButtonsContainer>
                     <Button
                         buttonText="Login"
-                        buttonType = "default"
+                        buttonType = {BUTTON_TYPE_CLASSES.base}
                         buttonOptions= {{
                             type: 'submit',
                         }}
@@ -90,16 +87,16 @@ const LoginForm = () => {
                     </Button>
                     <Button
                         buttonText="Google Sign-In"
-                        buttonType = "google"
+                        buttonType = {BUTTON_TYPE_CLASSES.google}
                         buttonOptions= {{
                             type: 'button',
                             onClick: SignInWithGoogle,
                         }}
                     >
                     </Button>
-                </div>
+                </ButtonsContainer>
             </form>
-        </div>
+        </LoginContainer>
     )
 }
 export default LoginForm;

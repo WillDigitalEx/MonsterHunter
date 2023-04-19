@@ -37,3 +37,11 @@ export const CartMonsters = styled.div`
     width: 6px;
   }
 `
+export const CloseCartLink = styled.span`
+  font-size: 0.75em;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    color: ${theme.defaultRed};
+  }
+`

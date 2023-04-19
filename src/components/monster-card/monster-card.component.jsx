@@ -16,7 +16,7 @@ const MonsterCard = ({ monster }) => {
     }
 
     return (
-        <MonsterCardContainer key={index}>
+        <MonsterCardContainer key={index} onClick={addMonsterTooCart}>
             <CardImageContainer>
                 <CardImage src={`/images/${index.replace("adult-", "").replace("ancient-", "").replace("young-", "").replace("-wyrmling", "")}.jpg`} onError={getDefaultImageUrl} alt={`${name}`} />
             </CardImageContainer>
@@ -27,10 +27,7 @@ const MonsterCard = ({ monster }) => {
             <Button
                 buttonText="Add to Cart"
                 buttonType = {BUTTON_TYPE_CLASSES.card}
-                buttonOptions= {{
-                    type: 'button',
-                    onClick: addMonsterTooCart,
-                }}
+                onClick={addMonsterTooCart}
             >
             </Button>
         </MonsterCardContainer>

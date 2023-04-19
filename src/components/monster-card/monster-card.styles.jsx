@@ -7,6 +7,7 @@ export const CardImageContainer = styled.div`
   margin-bottom: 0.3125rem;
   background-color: ${theme.subColor};
   padding-top: 1rem;
+  cursor: pointer;
 ` 
 export const CardImage = styled.img`
   width: 95%;

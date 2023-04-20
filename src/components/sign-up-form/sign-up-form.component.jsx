@@ -4,7 +4,6 @@ import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
 import { createAuthUserWithEmailAndPassword, createUserFromAuth } from "../../utils/firebase/firebase.utils";
-
 import { SignUpContainer, SignUpTitle } from "./sign-up-form.styles";
 
 const defaultFormFields = {

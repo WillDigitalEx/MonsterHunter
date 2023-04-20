@@ -7,7 +7,6 @@ import {
 
 import FormInput from "../form-input/form-input.component";
 import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
-
 import { LoginContainer, LoginTitle, ButtonsContainer } from "./login-form.styles";
 
 const defaultLoginFields = {

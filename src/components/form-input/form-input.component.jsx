@@ -1,15 +1,16 @@
-import { FormField, InputField, InputFieldLabel } from './form-input.styles';
+import { FormFields, InputField, InputFieldLabel } from './form-input.styles';
 const FormInput = ({ label, inputOptions }) => (
-    <FormField>
+    <FormFields>
         <InputField  {...inputOptions} />
         {label && (
             <InputFieldLabel 
+                shrink={inputOptions.value.length}
                 htmlFor={inputOptions.id} 
-                className={`${inputOptions.value.length ? 'shrink ' : ''}form-input-label`}>
+            >
                 {label}
             </InputFieldLabel>
         )}
-    </FormField>
+    </FormFields>
 );
 
 export default FormInput;

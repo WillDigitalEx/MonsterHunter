@@ -3,19 +3,21 @@ import { useNavigate } from 'react-router-dom';
 
 import { CartContext } from '../../contexts/cart.context';
 
-import Button from '../button/button.component';
+import Button, { BUTTON_TYPE_CLASSES }  from '../button/button.component';
 import CartMonster from '../cart-monster/cart-monster.component';
 
-import { CartDropdownContainer, CartMonsters, EmptyMessage } from './cart-dropdown.styles';
+import { CartDropdownContainer, CartMonsters, EmptyMessage, CloseCartLink } from './cart-dropdown.styles';
 
 const CartDropdown = () => {
     const { cartMonsters } = useContext(CartContext);
     const navigate = useNavigate();
-
+    const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+    const toggleIsCartOpen = () => setIsCartOpen(!isCartOpen);
     const goToCheckout = () => {
         navigate('/checkout');
+        toggleIsCartOpen();
     }
-
+    
     return (
         <CartDropdownContainer>
             <CartMonsters>
@@ -29,13 +31,16 @@ const CartDropdown = () => {
             </CartMonsters>
             <Button
                         buttonText="Check Out"
-                        buttonType = "inverted" //options: default, inverted, google
-                        buttonOptions= {{
-                            type: 'button',
-                            onClick: goToCheckout,
-                        }}
+                        buttonType = {BUTTON_TYPE_CLASSES.inverted}//options: default, inverted, google
+                        onClick ={goToCheckout}
                     >
             </Button>
+            <br />
+            <CloseCartLink
+                onClick ={toggleIsCartOpen}
+                    >
+                Close Cart
+            </CloseCartLink>
         </CartDropdownContainer>
     )
 }

@@ -106,9 +106,6 @@ const SignUpForm = () => {
                 <Button
                     buttonText="Sign Up"
                     buttonType = {BUTTON_TYPE_CLASSES.base}
-                    buttonOptions= {{
-                        type: 'submit',
-                    }}
                 >
                 </Button>
             </form>

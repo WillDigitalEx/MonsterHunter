@@ -80,18 +80,12 @@ const LoginForm = () => {
                     <Button
                         buttonText="Login"
                         buttonType = {BUTTON_TYPE_CLASSES.base}
-                        buttonOptions= {{
-                            type: 'submit',
-                        }}
                     >
                     </Button>
                     <Button
                         buttonText="Google Sign-In"
                         buttonType = {BUTTON_TYPE_CLASSES.google}
-                        buttonOptions= {{
-                            type: 'button',
-                            onClick: SignInWithGoogle,
-                        }}
+                        onClick = {SignInWithGoogle}
                     >
                     </Button>
                 </ButtonsContainer>

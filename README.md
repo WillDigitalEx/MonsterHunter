@@ -79,7 +79,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### Notes
-Images found on Nerdarchy.com and Wizards of the Coast LLC
-Routing done with React Router 6
-Logo downloaded from https://www.vecteezy.com/vector-art/4991740-shield-with-dragon-head-inside
+### Notes and Credits
+Monster Images from [Wizards of the Coast](https://dnd.wizards.com/) 
+Home Category Images taken from [Nerdarchy.com](https://nerdarchy.com/blogs/)
+Logo downloaded from [vecteezy](https://www.vecteezy.com/vector-art/4991740-shield-with-dragon-head-inside)
+Wizard image [Image by brgfx](https://www.freepik.com/free-vector/old-wizard-with-magic-wand-cartoon-style-isolated_9740877.htm#page=2&query=wizard%20avatar&position=20&from_view=keyword&track=ais) on Freepik

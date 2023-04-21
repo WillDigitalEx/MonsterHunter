@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'BreatheFireIii';
+  src: url('http://localhost:3000/fonts/BreatheFireIii-PKLOB.ttf');
+}
+
 body {
   margin: 0;
   font-size: 16px;
@@ -5,8 +10,10 @@ body {
   font-family: 'Marcellus', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
 }
-
+h1 { font-family: 'BreatheFireIii', 'Georgia', serif; }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

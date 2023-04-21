@@ -36,6 +36,4 @@ export const NavLink = styled(Link)`
     color: ${theme.defaultRed}; 
   }
 `
-//@import "../../variables";
-
 

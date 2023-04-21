@@ -8,11 +8,17 @@ export const CardImageContainer = styled.div`
   background-color: ${theme.subColor};
   padding-top: 1rem;
   cursor: pointer;
+  border-bottom: solid 2px #b38600;
+  border-right: solid 2px #b38600;
+  border-top: solid 2px #ffbf00;
+  border-left: solid 2px #ffbf00;
 ` 
 export const CardImage = styled.img`
   width: 95%;
   height: 95%;
   object-fit: contain;
+  display: block;
+  margin: auto;
 `
 export const MonsterCardContainer = styled.div`
   width: 100%;

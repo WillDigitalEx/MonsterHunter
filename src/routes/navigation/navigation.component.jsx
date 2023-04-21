@@ -9,7 +9,7 @@ import { CartContext } from '../../contexts/cart.context';
 
 import { signOutUser } from '../../utils/firebase/firebase.utils';
 
-import { NavigationContainer, LogoContainer, NavigationLinks, NavLink  } from './navigation.styles';
+import { NavigationContainer, LogoContainer, NavigationLinks, NavLink } from './navigation.styles';
 
 import {ReactComponent as DragonLogo } from '../../assets/dragon-logo.svg';
 

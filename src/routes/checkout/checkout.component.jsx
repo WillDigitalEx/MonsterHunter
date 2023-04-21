@@ -1,9 +1,9 @@
-import { useContext } from 'react';
+import { Fragment, useContext } from 'react';
 
 import { CartContext } from '../../contexts/cart.context';
 import CheckoutMonster from '../../components/checkout-monster/checkout-monster.component';
 
-
+import Footer from '../footer/footer.component';
 import { CheckoutContainer, CheckoutHeader, HeaderBlock, CheckoutTotal } from "./checkout.styles";
 
 
@@ -11,6 +11,7 @@ const Checkout = () => {
     const { cartMonsters, cartTotal } = useContext(CartContext);
 
     return (
+        <Fragment>
         <CheckoutContainer>
             <CheckoutHeader>
                 <HeaderBlock>
@@ -34,8 +35,11 @@ const Checkout = () => {
             ))}
             <CheckoutTotal>
                 Total: {cartTotal} Gold
-            </CheckoutTotal>    
+            </CheckoutTotal>
         </CheckoutContainer>
+        <Footer />
+        </Fragment>
+        
     )
 }
 

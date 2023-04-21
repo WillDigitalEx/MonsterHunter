@@ -1,5 +1,7 @@
+import { Fragment } from 'react';
 import CategoryContainer from '../directory-item/category-container.component';
-import { DirectoryContainer } from './category-directory.styles';
+import { DirectoryContainer, HomeTitle } from './category-directory.styles';
+import DialogueBox from '../dialogue-box/dialogue-box.component';
 
 const categories = [
   {
@@ -36,11 +38,16 @@ const categories = [
 const CategoryDirectory = () => {
 
       return (
-        <DirectoryContainer>
-          {categories.map((category) => (
-            <CategoryContainer key={ category.id } category={ category } />
-          ))}
-        </DirectoryContainer>
+        <Fragment>
+          <HomeTitle>FITZ'S MONSTER EMPORIUM</HomeTitle>
+          <DialogueBox dialogue={`Welcome to my little monster shop! Here you can purchase any number of monsters from the very tiny to the epic and have them transported to guard your dungeon, castle or land!
+          This is only a demo ecommerce site to test and demonstrate my React programming skills. You can find image credits here:`} extLinkUrl={`https://github.com/WillDigitalEx/FitzMonsterEmporium#notes-and-credits`} ctaText={`Open GitHub`}/>
+          <DirectoryContainer>
+            {categories.map((category) => (
+              <CategoryContainer key={ category.id } category={ category } />
+            ))}
+          </DirectoryContainer>
+        </Fragment>
       );
 }
 

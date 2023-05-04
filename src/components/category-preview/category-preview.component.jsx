@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 import { CategoryPreviewContainer, CatPreviewTitle, PreviewGrid } from './category-preview.styles';
 
-const CategoryPreview = ({ title, monsters }) => {
+const CategoryPreview = ({ title, slug, monsters }) => {
     return (
         <CategoryPreviewContainer>
             <CatPreviewTitle>
-                <Link to={title.replace(/\s+/g, '-')}>{title.toUpperCase()}</Link>
+                <Link to={slug}>{title.toUpperCase()}</Link>
             </CatPreviewTitle>
             <PreviewGrid>
                 {

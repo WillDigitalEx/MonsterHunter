@@ -1,7 +1,9 @@
 import { Fragment } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CategoryContainer from '../directory-item/category-container.component';
 import { DirectoryContainer, HomeTitle } from './category-directory.styles';
 import DialogueBox from '../dialogue-box/dialogue-box.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 const categories = [
   {
@@ -36,7 +38,10 @@ const categories = [
   },
 ]
 const CategoryDirectory = () => {
-
+  const navigate = useNavigate();
+  const goToShop= () => {
+    navigate('/shop');
+}
       return (
         <Fragment>
           <HomeTitle>FITZ'S MONSTER EMPORIUM</HomeTitle>
@@ -47,6 +52,12 @@ const CategoryDirectory = () => {
               <CategoryContainer key={ category.id } category={ category } />
             ))}
           </DirectoryContainer>
+          <center><Button
+                buttonText="View More Monster Categories"
+                buttonType = {BUTTON_TYPE_CLASSES.base}
+                onClick={goToShop}
+            >
+          </Button></center>
         </Fragment>
       );
 }

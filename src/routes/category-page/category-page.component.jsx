@@ -27,8 +27,8 @@ const CategoryPage = () => {
             desc: 'Beasts are nonhumanoid creatures. Some of them have magical powers, but most are unintelligent and lack any society or language. Beasts include all varieties of ordinary animals.'
         },
         {
-            index: 'celestial',
-            desc: 'Usually, a celestial serves some purpose or higher power. This doesn\'t necessarily mean they\'re working for a god or other entity. Through our contracts they can be given a specific goal or prophecy.'
+            index: 'construct',
+            desc: 'Constructs are programmed opponents designed to follow a preset routine for their entire existence, with little to no variation.'
         },
         {
             index: 'dragon',

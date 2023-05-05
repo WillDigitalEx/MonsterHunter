@@ -12,6 +12,7 @@ export const BackToTopButton = styled.button`
     border-radius: 100px;
     border: none;
     box-shadow: 0 5px 10px #ccc;
+    z-index: 999;
 
   
   &:hover {

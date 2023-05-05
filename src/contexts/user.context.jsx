@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useReducer } from  'react';
+import { createContext, useState, useEffect } from  'react';
 
 import { onAuthStateChangedListener, createUserFromAuth } from '../utils/firebase/firebase.utils';
 
